@@ -20,7 +20,7 @@ RELEASE="$(rpm -E %fedora)"
 
 # Install package from github
 chmod +x /tmp/github-release-install.sh
-/tmp/github-release-install.sh displaylink-rpm/displaylink-rpm x86_64 fedora
+/tmp/github-release-install.sh displaylink-rpm/displaylink-rpm x86_64 fedora-40
 
 #### Example for enabling a System Unit File
 
