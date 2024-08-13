@@ -15,7 +15,11 @@
 # - "base"
 #
 #  "aurora", "bazzite", "bluefin" or "ucore" may also be used but have different suffixes.
-ARG SOURCE_IMAGE="silverblue"
+ARG IMAGE_NAME="${IMAGE_NAME:-silverblue}"
+ARG SOURCE_IMAGE="${SOURCE_IMAGE:-silverblue}"
+ARG SOURCE_ORG="${SOURCE_ORG:-fedora-ostree-desktops}"
+ARG BASE_IMAGE="quay.io/${SOURCE_ORG}/${SOURCE_IMAGE}"
+ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-rawhide}"
 
 ## SOURCE_SUFFIX arg should include a hyphen and the appropriate suffix name
 # These examples all work for silverblue/kinoite/sericea/onyx/lazurite/vauxite/base
@@ -42,6 +46,10 @@ ARG SOURCE_TAG="rawhide"
 ### 2. SOURCE IMAGE
 ## this is a standard Containerfile FROM using the build ARGs above to select the right upstream image
 FROM quay.io/fedora/fedora-${SOURCE_IMAGE}:${SOURCE_TAG}
+FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION}
+
+ARG IMAGE_NAME="${IMAGE_NAME:-silverblue}"
+ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-rawhide}"
 
 
 ### 3. MODIFICATIONS
