@@ -18,9 +18,6 @@ RELEASE="$(rpm -E %fedora)"
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
 
-### github direct installs
-/tmp/github-release-install.sh displaylink-rpm/displaylink-rpm x86_64 fedora
-
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
