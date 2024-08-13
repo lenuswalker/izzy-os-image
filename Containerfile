@@ -61,8 +61,9 @@ ADD https://negativo17.org/repos/fedora-multimedia.repo \
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
 COPY build.sh /tmp/build.sh
-COPY github-release-install.sh /tmp/github-release-install.sh
-COPY build-kmod-evdi.sh /tmp/build-kmod-evdi.sh
+#COPY github-release-install.sh /tmp/github-release-install.sh
+#COPY build-kmod-evdi.sh /tmp/build-kmod-evdi.sh
+COPY build-displaylink-rpm.sh /tmp/build-displaylink-rpm.sh
 
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
