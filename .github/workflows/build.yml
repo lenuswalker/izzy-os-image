@@ -89,7 +89,7 @@ jobs:
             io.artifacthub.package.readme-url=https://raw.githubusercontent.com/${{ github.repository }}/main/README.md
             org.opencontainers.image.description=${{ env.MY_IMAGE_DESC }}
             org.opencontainers.image.title=${{ env.MY_IMAGE_NAME }}
-            org.opencontainers.image.version=41.${{ ${TIMESTAMP} }}.0
+            org.opencontainers.image.version=41.$(date +%Y%m%d).0
 
       # Build image using Buildah action
       - name: Build Image
