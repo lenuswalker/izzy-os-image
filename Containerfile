@@ -67,7 +67,9 @@ COPY build-kmod-evdi.sh /tmp/build-kmod-evdi.sh
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
     chmod +x /tmp/build-kmod-evdi.sh && \
-    chmod +x /tmp/github-release-install.sh displaylink-rpm/displaylink-rpm x86_64 fedora && \
+    /tmp/build-kmod-evdi.sh && \
+    chmod +x /tmp/github-release-install.sh && \
+    /tmp/github-release-install.sh displaylink-rpm/displaylink-rpm x86_64 fedora && \
     ostree container commit
 
 ## NOTES:
