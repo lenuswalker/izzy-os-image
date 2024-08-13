@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -oeux pipefail
+set -ouex pipefail
 
 
 ARCH="$(rpm -E '%_arch')"
