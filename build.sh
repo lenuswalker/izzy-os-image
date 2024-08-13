@@ -28,7 +28,7 @@ chmod +x /tmp/build-displaylink-rpm.sh
 
 
 # this uninstalls a package from fedora repos
-rpm-ostree uninstall make
+rpm-ostree uninstall make rpmbuild
 
 #### Example for enabling a System Unit File
 
