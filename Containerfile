@@ -45,11 +45,15 @@ ARG SOURCE_TAG="rawhide"
 
 ### 2. SOURCE IMAGE
 ## this is a standard Containerfile FROM using the build ARGs above to select the right upstream image
-FROM quay.io/fedora/fedora-${SOURCE_IMAGE}:${SOURCE_TAG}
 FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION}
 
 ARG IMAGE_NAME="${IMAGE_NAME:-silverblue}"
 ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-rawhide}"
+
+COPY akmods-addons.spec /tmp/akmods-addons/akmods-addons.spec
+
+ADD https://negativo17.org/repos/fedora-multimedia.repo \
+    /tmp/akmods-addons/rpmbuild/SOURCES/negativo17-fedora-multimedia.repo
 
 
 ### 3. MODIFICATIONS
@@ -60,7 +64,8 @@ COPY build.sh /tmp/build.sh
 
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
-    ostree container commit
+    ostree container commit \
+    /tmp/build-kmod-evdi.sh
 ## NOTES:
 # - /var/lib/alternatives is required to prevent failure with some RPM installs
 # - All RUN commands must end with ostree container commit
