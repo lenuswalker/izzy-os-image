@@ -18,7 +18,7 @@ env:
   MY_IMAGE_DESC: "My Customized Universal Blue Image"
   MY_IMAGE_VERSION: "41.20240813.0"
   IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}"  # do not edit
-  BASE_IMAGE_URL: "quay.io/fedora/fedora-ostree-desktops:rawhide"
+  BASE_IMAGE_URL: "quay.io/fedora/fedora-ostree-desktops"
   FEDORA_MAJOR_VERSION: "rawhide"
 
 jobs:
