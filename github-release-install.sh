@@ -58,6 +58,7 @@ RPM_URLS=$(cat ${API_JSON} \
   | jq \
     -r \
     --arg arch_filter "${ARCH_FILTER}" \
+    --arg name_filter "${NAME_FILTER}" \
     '.assets | sort_by(.created_at) | reverse | .[] | select(.name|test($arch_filter)) | select(.name|test($name_filter)) | select (.name|test("rpm$")) | .browser_download_url')
 for URL in ${RPM_URLS}; do
   # WARNING: in case of multiple matches, this only installs the first matched release
