@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rpm-ostree install fedora-packager rpmdevtools gcc gcc-c++ gcc-plugin-annobin libdrm libdrm-devel make \
+rpm-ostree install rpmdevtools gcc gcc-c++ gcc-plugin-annobin libdrm libdrm-devel make \
     gnome-session-wayland-session xorg-x11-server-Xwayland python3-rpkg fedpkg webkitgtk6.0 gdm \
     webkit2gtk4 gnome-shell gnome-initial-setup
 
@@ -10,6 +10,6 @@ cd /tmp/displaylink-rpm
 
 make main
 
-rpm-ostree uninstall fedora-packager rpmdevtools gcc gcc-c++ gcc-plugin-annobin libdrm libdrm-devel make \
+rpm-ostree uninstall rpmdevtools gcc gcc-c++ gcc-plugin-annobin libdrm libdrm-devel make \
     gnome-session-wayland-session xorg-x11-server-Xwayland python3-rpkg fedpkg webkitgtk6.0 gdm \
     webkit2gtk4 gnome-shell gnome-initial-setup
