@@ -8,6 +8,4 @@ cd /tmp/displaylink-rpm
 
 make rawhide
 
-cd /
-
 #rpm-ostree uninstall fedora-packager rpmdevtools gcc gcc-c++ libdrm libdrm-devel make
