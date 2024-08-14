@@ -6,6 +6,6 @@ git clone https://github.com/displaylink-rpm/displaylink-rpm.git /tmp/displaylin
 
 cd /tmp/displaylink-rpm
 
-make rawhide
+make main
 
 #rpm-ostree uninstall fedora-packager rpmdevtools gcc gcc-c++ libdrm libdrm-devel make
