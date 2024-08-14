@@ -26,9 +26,6 @@ RELEASE="$(rpm -E %fedora)"
 chmod +x /tmp/build-displaylink-rpm.sh
 /tmp/build-displaylink-rpm.sh
 
-
-rpm-ostree uninstall fedora-packager rpmdevtools gcc gcc-c++ annobin-plugin-gcc libdrm libdrm-devel make \
-    gnome-session-wayland-session xorg-x11-server-Xwayland python3-rpkg fedpkg webkitgtk6.0
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
