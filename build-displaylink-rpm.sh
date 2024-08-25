@@ -12,6 +12,6 @@ cd /tmp/displaylink-rpm
 
 make rawhide
 
-rpm-ostree uninstall rpmdevtools gcc gcc-c++ gcc-plugin-annobin libdrm libdrm-devel make \
-    gnome-session-wayland-session xorg-x11-server-Xwayland python3-rpkg fedpkg webkitgtk6.0 gdm \
-    gnome-shell gnome-initial-setup
+# rpm-ostree uninstall rpmdevtools gcc gcc-c++ gcc-plugin-annobin libdrm libdrm-devel make \
+#     gnome-session-wayland-session xorg-x11-server-Xwayland python3-rpkg fedpkg webkitgtk6.0 gdm \
+#     gnome-shell gnome-initial-setup
