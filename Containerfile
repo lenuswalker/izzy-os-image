@@ -53,7 +53,7 @@ ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-rawhide}"
 COPY akmods-addons.spec /tmp/akmods-addons.spec
 
 ADD https://negativo17.org/repos/fedora-multimedia.repo \
-    /tmp/rpmbuild/SOURCES/negativo17-fedora-multimedia.repo
+    /tmp/akmods-addons/rpmbuild/SOURCES/negativo17-fedora-multimedia.repo
 
 
 ### 3. MODIFICATIONS
