@@ -10,7 +10,7 @@ RELEASE=40
 
 cp /tmp/akmods-addons/rpmbuild/SOURCES/negativo17-fedora-multimedia.repo /etc/yum.repos.d/
 
-sed -i 's|baseurl=https://negativo17.org/repos/multimedia/fedora-$releasever/$basearch/|baseurl=https://negativo17.org/repos/multimedia/fedora-40/$basearch/' /etc/yum.repos.d/negativo17-fedora-multimedia.repo
+sed -i 's|baseurl=https://negativo17.org/repos/multimedia/fedora-$releasever/$basearch/|baseurl=https://negativo17.org/repos/multimedia/fedora-40/$basearch/|' /etc/yum.repos.d/negativo17-fedora-multimedia.repo
 
 ### BUILD evdi (succeed or fail-fast with debug output)
 export CFLAGS="-fno-pie -no-pie"
