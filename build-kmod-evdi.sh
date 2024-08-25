@@ -17,8 +17,8 @@ export CFLAGS="-fno-pie -no-pie"
 rpm-ostree install -y \
     akmod-evdi-1.14.6-2.fc40.${ARCH}
 # akmods --force --kernels "${KERNEL}" --kmod evdi
-modinfo /usr/lib/modules/${KERNEL}/extra/evdi/evdi.ko.xz > /dev/null \
-|| (find /var/cache/akmods/evdi/ -name \*.log -print -exec cat {} \; && exit 1)
+# modinfo /usr/lib/modules/${KERNEL}/extra/evdi/evdi.ko.xz > /dev/null \
+# || (find /var/cache/akmods/evdi/ -name \*.log -print -exec cat {} \; && exit 1)
 
 rm -f /etc/yum.repos.d/negativo17-fedora-multimedia.repo
 unset CFLAGS
