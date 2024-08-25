@@ -16,7 +16,7 @@ sed -i 's|baseurl=https://negativo17.org/repos/multimedia/fedora-$releasever/$ba
 export CFLAGS="-fno-pie -no-pie"
 rpm-ostree install -y \
     akmod-evdi-1.14.6-2.fc40.${ARCH}
-akmods --force --kernels "${KERNEL}" --kmod evdi
+# akmods --force --kernels "${KERNEL}" --kmod evdi
 modinfo /usr/lib/modules/${KERNEL}/extra/evdi/evdi.ko.xz > /dev/null \
 || (find /var/cache/akmods/evdi/ -name \*.log -print -exec cat {} \; && exit 1)
 
