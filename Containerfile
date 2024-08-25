@@ -50,10 +50,10 @@ FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION}
 ARG IMAGE_NAME="${IMAGE_NAME:-silverblue}"
 ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-rawhide}"
 
-COPY akmods-addons.spec /tmp/akmods-addons.spec
+# COPY akmods-addons.spec /tmp/akmods-addons.spec
 
-ADD https://negativo17.org/repos/fedora-multimedia.repo \
-    /tmp/rpmbuild/SOURCES/negativo17-fedora-multimedia.repo
+# ADD https://negativo17.org/repos/fedora-multimedia.repo \
+#     /tmp/rpmbuild/SOURCES/negativo17-fedora-multimedia.repo
 
 
 ### 3. MODIFICATIONS
@@ -62,13 +62,13 @@ ADD https://negativo17.org/repos/fedora-multimedia.repo \
 
 COPY build.sh /tmp/build.sh
 # COPY github-release-install.sh /tmp/github-release-install.sh
-COPY build-kmod-evdi.sh /tmp/build-kmod-evdi.sh
-# COPY build-displaylink-rpm.sh /tmp/build-displaylink-rpm.sh
+# COPY build-kmod-evdi.sh /tmp/build-kmod-evdi.sh
+COPY build-displaylink-rpm.sh /tmp/build-displaylink-rpm.sh
 
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
-    chmod +x /tmp/build-kmod-evdi.sh && \
-    /tmp/build-kmod-evdi.sh && \
+    chmod +x /tmp/build-displaylink-rpm.sh && \
+    /tmp/build-displaylink-rpm.sh && \
     ostree container commit
 
 ## NOTES:
